@@ -8,6 +8,8 @@ import discord
 from discord.ext import commands
 import aiohttp
 from discord import app_commands
+from flask import Flask
+import threading
 
 # Configure logging
 logging.basicConfig(
