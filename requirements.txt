@@ -1,2 +1,4 @@
 aiohttp==3.9.1
 discord.py==2.3.2
+python-dotenv
+Flask
