@@ -14,7 +14,34 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
-logger = logging.getLogger('SocialSearchBot')
+logger = logging.getLogger('Tricord')
+
+
+
+
+# Flask app for port binding
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_flask():
+    app.run(host='0.0.0.0', port=10000)
+
+# Start Flask in a separate thread
+flask_thread = threading.Thread(target=run_flask)
+flask_thread.daemon = True
+flask_thread.start()
+
+
+
+
+
+
+
+
+
 
 class SearchBot(commands.Bot):
     def __init__(self):
